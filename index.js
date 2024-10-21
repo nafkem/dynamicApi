@@ -13,21 +13,21 @@ app.get('/', (req, res) => {
 
 // Handling dynamic GET requests with query parameters
 app.get('/api/data', (req, res) => {
-    const { kemi, age } = req.query;
-    res.json({ message: `Hello, ${kemi}! You are ${age} years old.` });
+    const { name, age } = req.query;
+    res.json({ message: `Hello, ${name}! You are ${age} years old.` });
 });
 
 // Handling POST requests
 app.post('/api/data', (req, res) => {
     const { name, age } = req.body;
-    res.json({ message: `Received data for ${tayo}, age ${37}` });
+    res.json({ message: `Received data for ${name}, age ${age}` });
 });
 
 // Handling PUT requests
 app.put('/api/data/:id', (req, res) => {
     const { id } = req.params;
     const { name, age } = req.body;
-    res.json({ message: `Updated record ${id} with name ${Titi} and age ${22}` });
+    res.json({ message: `Updated record ${id} with name ${name} and age ${age}` });
 });
 
 // Handling DELETE requests
